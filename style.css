@@ -1,0 +1,106 @@
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,35,0) 0%, rgba(5,158,125,1) 22%, rgba(0,212,255,1) 100%);
+}
+.container h1{
+    text-align: center;
+}
+
+.ba {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.b--black-20 {
+    border-color: rgba(0, 0, 0, .2);
+}
+
+.db {
+    display: block;
+}
+
+.normal {
+    font-weight: normal;
+}
+
+.b {
+    font-weight: bold;
+}
+
+.input-reset {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+}
+
+.input-reset::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.black-80 {
+    color: rgba(0, 0, 0, .8);
+}
+
+.black-60 {
+    color: rgba(0, 0, 0, .6);
+}
+
+.pa2 {
+    padding: .5rem;
+}
+
+.pa4 {
+    padding: 2rem;
+}
+
+.mb2 {
+    margin-bottom: .5rem;
+}
+
+.f6 {
+    font-size: .875rem;
+}
+
+.measure {
+    margin: auto;
+}
+
+.ph3{
+    text-align: center;
+}
+
+p{
+    display: block;
+    text-align: center;
+    font-size: 25px;
+}
+
+#getsong{
+    cursor: pointer;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #12823d #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #12823d;
+    border-radius: 10px;
+    border: 3px solid #1623da;
+  }
