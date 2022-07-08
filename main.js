@@ -13,8 +13,8 @@ getsong.addEventListener("click", function (e) {
     return;
   }
 
-  lyric.innerHTML = '<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
   setTimeout(function () {
+    lyric.innerHTML = '<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
     fetch(`https://api.lyrics.ovh/v1/${artist.value}/${song.value}`)
     .then(response => response.json())
     .then(resultado => {
@@ -22,11 +22,11 @@ getsong.addEventListener("click", function (e) {
       if (resultado.lyrics) {
         lyric.innerHTML = resultado.lyrics.replace(new RegExp("\n", "g"),"<br>");
       } else {
-          mostrarError("La cancion no existe...");
+        lyric.innerHTML =  ''
+        mostrarError("La cancion no existe...");
       }
   })
-  }
-  , 2000);
+  },2000);
 });
 
 function mostrarError(mensaje){
