@@ -20,3 +20,14 @@ document.getElementById("getsong").addEventListener("click", function () {
     getLyrics();
   }, 2000);
 });
+
+function mostrarError(mensaje){
+  const error = document.createElement("p");
+  error.classList.add("error-mensaje");
+  error.innerText = mensaje;
+
+  lyrics.appendChild(error);
+  setTimeout(() => {
+      error.remove();
+  }, 3000);
+}
