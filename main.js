@@ -1,3 +1,4 @@
+
 const artist = document.getElementById("artist");
 const song = document.getElementById("song");
 const lyric = document.getElementById("lyrics");
@@ -15,19 +16,23 @@ getsong.addEventListener("click", function (e) {
 
   setTimeout(function () {
     lyric.innerHTML = '<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
-    fetch(`https://api.lyrics.ovh/v1/${artist.value}/${song.value}`)
-    .then(response => response.json())
-    .then(resultado => {
-      console.log(resultado.lyrics);
-      if (resultado.lyrics) {
-        lyric.innerHTML = resultado.lyrics.replace(new RegExp("\n", "g"),"<br>");
-      } else {
-        lyric.innerHTML =  ''
-        mostrarError("La cancion no existe...");
-      }
-  })
+    getSong();
   },2000);
 });
+
+function getSong(){
+  fetch(`https://api.lyrics.ovh/v1/${artist.value}/${song.value}`)
+  .then(response => response.json())
+  .then(resultado => {
+    console.log(resultado.lyrics);
+    if (resultado.lyrics) {
+      lyric.innerHTML = resultado.lyrics.replace(new RegExp("\n", "g"),"<br>");
+    } else {
+      lyric.innerHTML =  ''
+      mostrarError("La cancion no existe...");
+    }
+})
+}
 
 function mostrarError(mensaje){
   const error = document.createElement("p");
@@ -39,3 +44,4 @@ function mostrarError(mensaje){
       error.remove();
   }, 3000);
 }
+
